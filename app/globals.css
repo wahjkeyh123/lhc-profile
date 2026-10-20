@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --font-bodoni: "Bodoni Moda Variable";
+    --font-inter: "Inter Variable";
+    --font-mono: "JetBrains Mono Variable";
+    --font-serif-sc: "Noto Serif SC Variable", "Songti SC", "STSong";
+    --font-sans-sc: "Noto Sans SC Variable", "PingFang SC", "Microsoft YaHei";
+    --sat: env(safe-area-inset-top, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --sal: env(safe-area-inset-left, 0px);
+    --sar: env(safe-area-inset-right, 0px);
+    --header-offset: calc(68px + var(--sat));
+    --rule: rgba(228, 240, 248, 0.16);
+    --rule-strong: rgba(228, 240, 248, 0.32);
+    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink text-ice antialiased;
+    font-feature-settings: "palt";
+    min-height: 100dvh;
+    overflow-x: hidden;
+    padding-left: var(--sal);
+    padding-right: var(--sar);
+  }
+
+  ::selection {
+    background: rgba(190, 232, 244, 0.28);
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 1px solid rgba(190, 232, 244, 0.85);
+    outline-offset: 4px;
+  }
+}
+
+@layer components {
+  .micro {
+    @apply font-mono text-[10px] uppercase tracking-label text-ice-mute;
+  }
+
+  .rule {
+    @apply h-px w-full;
+    background: var(--rule);
+  }
+
+  /* 极薄玻璃面板：细边、弱阴影，不做厚重卡片。 */
+  .glass-thin {
+    background: linear-gradient(180deg, rgba(228, 235, 241, 0.045), rgba(228, 235, 241, 0.012));
+    box-shadow:
+      inset 0 0 0 1px rgba(228, 235, 241, 0.09),
+      0 18px 40px -28px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(14px) saturate(1.1);
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  }
+
+  .text-metal {
+    background: linear-gradient(176deg, #ffffff 0%, #e6eef5 28%, #a9b9c8 52%, #f0f5f9 70%, #b3c2d0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .flow-line {
+    background: linear-gradient(90deg, transparent 0%, rgba(190, 232, 244, 0) 35%, rgba(190, 232, 244, 0.85) 50%, rgba(190, 232, 244, 0) 65%, transparent 100%),
+      var(--rule);
+    background-size: 200% 100%, 100% 100%;
+  }
+
+  /* 冷调调色：压低黄调与饱和度，保留层次。 */
+  .grade-cold {
+    filter: saturate(0.62) contrast(1.08) brightness(0.92);
+  }
+
+  .grade-tint {
+    background: linear-gradient(180deg, rgba(120, 160, 196, 0.22), rgba(16, 26, 38, 0.18));
+    mix-blend-mode: color;
+  }
+
+  .vignette {
+    background: radial-gradient(120% 90% at 50% 40%, transparent 52%, rgba(6, 20, 38, 0.66) 100%);
+  }
+
+  .grain-layer {
+    background-image: var(--noise);
+    background-size: 180px 180px;
+  }
+
+  .scanlines {
+    background-image: repeating-linear-gradient(180deg, rgba(228, 235, 241, 0.05) 0 1px, transparent 1px 3px);
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgba(228, 235, 241, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(228, 235, 241, 0.035) 1px, transparent 1px);
+    background-size: 96px 96px;
+  }
+}
+
+/* 小屏关闭玻璃模糊：大面积 backdrop-filter 在手机滚动时开销很高。 */
+@media (max-width: 1023px) {
+  .glass-thin {
+    background: linear-gradient(180deg, rgba(20, 54, 88, 0.62), rgba(14, 42, 72, 0.5));
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

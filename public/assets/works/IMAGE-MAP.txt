@@ -1,0 +1,17 @@
+把竖版海报（建议 jpg / webp，约 2:3）放到本目录，文件名必须与左边一致。
+放好后刷新作品页即可显示；没有文件时仍显示渐变占位和片名。
+
+one-second.jpg                 电影《一秒钟》
+red-flower.jpg                 电影《送你一朵小红花》
+cliff-walkers.jpg              电影《悬崖之上》
+the-crossing.jpg               电影《四海》
+ride-on.jpg                    电影《龙马精神》
+never-say-never.jpg            电影《念念相忘》
+derailment.jpg                 剧集《脱轨》
+brilliant-her.jpg              电影《灿烂的她》
+shangganling.jpg               剧集《上甘岭》
+girl-who-wanted-to-fly.jpg     电影《想飞的女孩》
+into-our-romance.jpg           剧集《陷入我们的热恋》
+seven-hearts.jpg               剧集《七根心简》
+the-vanished.jpg               电影《消失的人》
+leading-role.jpg               剧集《主角》
