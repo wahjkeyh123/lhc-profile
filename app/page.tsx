@@ -16,9 +16,9 @@ export default function HomePage() {
     <>
       <HomeHero
         kicker="FAN ARCHIVE · CINEMA RECORD"
-        title="浩瀚蓝"
-        titleEn="HAOHAN BLUE"
-        lead="以浩瀚星空蓝为底、天光为晕、银白为字、淡金为点：把刘浩存公开可见的银幕履历，收成一部可翻阅的影院纪录。"
+        title="刘浩存"
+        titleEn="LIU HAOCUN"
+        lead="以浩瀚星空蓝为底、天光为晕、银白为字、淡金为点：把公开可见的银幕履历，收成一部可翻阅的影院纪录。"
         portrait={profile.image}
         name={profile.name}
         nameEn={profile.nameEn}

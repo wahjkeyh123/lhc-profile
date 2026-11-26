@@ -44,11 +44,11 @@ export function SiteHeader() {
         )}
       />
       <div className="relative mx-auto flex h-[68px] max-w-[1600px] items-center justify-between px-5 sm:px-8 lg:px-12">
-        <Link href="/" className="group flex items-baseline gap-3" aria-label="刘浩存的浩瀚蓝 首页">
+        <Link href="/" className="group flex items-baseline gap-3" aria-label="刘浩存的档案 首页">
           <span className="font-serifsc text-[15px] tracking-[0.16em] text-ice transition-colors duration-500 group-hover:text-haohan">
-            刘浩存的浩瀚蓝
+            刘浩存的档案
           </span>
-          <span className="micro hidden sm:inline">HAOHAN BLUE</span>
+          <span className="micro hidden sm:inline">ARCHIVE</span>
         </Link>
 
         <nav aria-label="主导航" className="hidden lg:block" onMouseLeave={() => setHovered(null)}>

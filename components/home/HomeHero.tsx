@@ -97,16 +97,16 @@ export function HomeHero({
           </span>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 lg:min-h-[calc(100svh-var(--header-offset)-57px)] lg:grid-cols-12 lg:gap-x-6 lg:pb-20 lg:pt-14">
+        <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 lg:pb-20 lg:pt-14">
           <motion.div
-            className="relative z-10 flex flex-col lg:col-span-7 lg:row-start-1"
+            className="relative z-10 flex flex-col"
             style={parallax ? { y: titleY, opacity: fade } : undefined}
           >
             <motion.p className="micro mb-6 text-haohan md:hidden" {...enter(0.1)}>
               {kicker}
             </motion.p>
 
-            <h1 id="home-title" aria-label={title} className="relative lg:-mr-[22%]">
+            <h1 id="home-title" aria-label={title} className="relative">
               <GlitchText
                 text={title}
                 className="max-w-full font-serifsc text-[clamp(64px,17vw,288px)] font-semibold leading-[0.84] tracking-[-0.04em]"
@@ -163,7 +163,7 @@ export function HomeHero({
             </motion.nav>
           </motion.div>
 
-          <div className="flex justify-end lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:items-center">
+          <div className="flex justify-center">
           <div className="relative w-[68%] max-w-[320px] sm:max-w-[360px] lg:w-full lg:max-w-[400px]">
             <motion.div
               aria-hidden
@@ -203,7 +203,7 @@ export function HomeHero({
               aria-hidden
               className="micro absolute -left-8 top-full hidden origin-top-left -rotate-90 whitespace-nowrap xl:block"
             >
-              HAOHAN BLUE ARCHIVE — 浩瀚蓝
+              LIU HAOCUN ARCHIVE — 刘浩存
             </span>
           </div>
           </div>
